@@ -6,50 +6,50 @@
 
 int main()
 {
-	favColors colors;
+	favColors* colors = favColors::getInstance();
 	bool doWhile = true;
 	int colorOption = 0;
 	int option = 0;
 	while (doWhile) {
 		std::cout << "Hello User!!!\n";
-		colors.showFirstMenu();
+		colors->showFirstMenu();
 		std::cin >> option;
 		switch (option) {
 		case 1:
 			std::cout << "You add new favorite color\n";
-			colors.showColors();
+			colors->showColors();
 			std::cin >> colorOption;
 			if (colorOption == 0) {
 				return 0; // Exit the if
 			}
-			else colors.addColor(colorOption);
-			colors.pressEnterToContinue();
-			colors.clearConsole();
+			else colors->addColor(colorOption);
+			colors->pressEnterToContinue();
+			colors->clearConsole();
 			break;
 		case 2:
 			std::cout << "You remove one of favorite color\n";
-			colors.showColors();
+			colors->showColors();
 			std::cin >> colorOption;
-			colors.removeColor(colorOption);
-			colors.pressEnterToContinue();
-			colors.clearConsole();
+			colors->removeColor(colorOption);
+			colors->pressEnterToContinue();
+			colors->clearConsole();
 			break;
 		case 3:
 			std::cout << "Your favorite colors are:\n";
-			colors.showFavoriteColors();
-			colors.pressEnterToContinue();
-			colors.clearConsole();
+			colors->showFavoriteColors();
+			colors->pressEnterToContinue();
+			colors->clearConsole();
 			break;
 		case 4:
-			colors.clearConsole();
+			colors->clearConsole();
 			std::cout << "You exit\n";
 			doWhile = false;
 			break;
 
 		default:
 			std::cout << "Invalid option\n";
-			colors.pressEnterToContinue();
-			colors.clearConsole();
+			colors->pressEnterToContinue();
+			colors->clearConsole();
 		}
 	}
 }

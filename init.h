@@ -4,7 +4,10 @@
 class favColors {
 private:
 	unsigned int buffer = 0;
+	favColors() = default;
+	static favColors* instance;
 public:
+	static favColors* getInstance();
 	unsigned int getBuffer() const;
 	void setBuffer(int newBuffer);
 

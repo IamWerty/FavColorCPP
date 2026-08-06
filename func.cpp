@@ -68,3 +68,12 @@ void favColors::showFavoriteColors() {
     if (buffer & (1 << 10)) std::cout << "\tSalad\n";
     if (buffer & (1 << 11)) std::cout << "\tGray\n";
 }
+
+favColors* favColors::instance = nullptr;
+
+favColors* favColors::getInstance() {
+    if (instance == nullptr) {
+        instance = new favColors();
+    }
+    return instance;
+}
