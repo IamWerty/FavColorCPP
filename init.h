@@ -6,6 +6,9 @@ private:
 	unsigned int buffer = 0;
 	favColors() = default;
 	static favColors* instance;
+	favColors(const favColors&) = delete;
+	favColors& operator=(const favColors&) = delete;
+
 public:
 	static favColors* getInstance();
 	unsigned int getBuffer() const;
